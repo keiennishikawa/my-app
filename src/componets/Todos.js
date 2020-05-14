@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
+import TodoItem from './TodoItem';
 
 class Todos extends Component {
   render() {
-    const Items = this.props.todos.map((item) =>
-      <p key={item.id}>{item.title}</p>
-    )
-    return (
-      <div>
-       <h1>My Todo List</h1> 
-       {Items}
-      </div>
-    )
+    return this.props.todos.map((todo) => (
+      <TodoItem key={todo.id} todo={todo} delTodo={this.props.delTodo} />
+    ));
   }
 }
 

@@ -22,20 +22,13 @@ class Form extends Component {
        <form onSubmit={this.MyTodoSubmit}>
          <p>My Todo Form</p>
          <label>ID: </label>
-         <input 
-          type='text'
-          name='id'
-          value={this.state.id}
+         <input type='text' name='id' value={this.state.id}
           onChange={this.onChangeId}
          />
          <br />
          <label>Title: </label>
-         <input
-          type='text'
-          name='title'
-          value={this.state.title}
-          onChange={this.onChangeTitle}
-         />
+         <input type='text' name='title' value={this.state.title}
+          onChange={this.onChangeTitle} />
          <br />
          <input type='submit' />
        </form> 

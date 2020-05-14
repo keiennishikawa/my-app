@@ -25,12 +25,17 @@ class App extends Component {
 
   // Add Todo
   addTodo = (id, title) => {
-    // console.log(`Add Todo / ID: ${id} Title: ${title}`)
     const newTodo = {
       id: id,
       title: title
     }
     this.setState({ todos: [...this.state.todos, newTodo] });
+  }
+
+  // Delete Todo
+  delTodo = (id) => {
+    this.setState({ todos: [...this.state.todos.filter(todo =>
+      todo.id !== id)] });
   }
 
   render() {
@@ -41,7 +46,7 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <Form addTodo={this.addTodo} />
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} delTodo={this.delTodo} />
       </div>
     );
   }
